@@ -72,6 +72,8 @@ Router::any('/logout', '\controllers\auth@logout'); // logout
 
 
 Router::any('/dashboard', '\controllers\dashboard@index');
+Router::any('/tentamens', '\controllers\exams@index');
+Router::any('/tentamens/create', '\controllers\exams@create');
 
 //if no route found
 Router::error('\core\error@index');

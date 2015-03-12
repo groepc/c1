@@ -11,7 +11,7 @@ class User extends \core\model {
     }
 
     public function getUserByUsername($username) {
-        return $this->_db->select("SELECT * FROM gebruiker WHERE gebruikersnaam = :gebruikersnaam LIMIT 1", array(':gebruikersnaam' => $username));
+        return $this->_db->select("SELECT * FROM gebruiker WHERE rolID = 2 AND gebruikersnaam = :gebruikersnaam LIMIT 1", array(':gebruikersnaam' => $username));
     }
 
     public function getUsers(){

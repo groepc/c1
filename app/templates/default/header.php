@@ -9,8 +9,8 @@
 
     <title><?php echo $data['title'].' - '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
 
-    <link href="app/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="app/assets/css/dashboard.css" rel="stylesheet">
+    <link href="/app/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/app/assets/css/dashboard.css" rel="stylesheet">
   </head>
   <body>
       <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,11 +36,11 @@
         <div class="row">
           <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-              <li class="active"><a href="#">Menu item</a></li>
-              <li><a href="#">Menu item</a></li>
+              <li <?php if($data['title'] === 'Dashboard'): ?>class="active"<?php endif; ?>><a href="/dashboard">Dashboard</a></li>
+              <li <?php if($data['title'] === 'Tentamens'): ?>class="active"<?php endif; ?>><a href="/tentamens">Tentamens</a></li>
               <li><a href="#">Menu item</a></li>
               <li><a href="#">Menu item</a></li>
             </ul>
           </div>
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header"><?php echo $data['title']; ?> <?php if(isset($data['subtitle'])): ?><small>- <?php echo $data['subtitle']; ?></small><?php endif; ?></h1>

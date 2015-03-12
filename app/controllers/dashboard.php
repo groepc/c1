@@ -31,15 +31,14 @@ class Dashboard extends \core\controller{
         View::rendertemplate('footer', $data);
     }
 
-    /**
-     * Define Subpage page title and load template files
-     */
-    public function subpage() {
-        $data['title'] = $this->language->get('subpage_text');
-        $data['welcome_message'] = $this->language->get('subpage_message');
+    public function tentamens() {
+        $exam = $this->loadModel('Exam');
+
+        $data['title'] = 'Tentamens';
+        $data['exams'] = $exam->getAllExams();
 
         View::rendertemplate('header', $data);
-        View::render('welcome/subpage', $data);
+        View::render('dashboard/tentamen', $data);
         View::rendertemplate('footer', $data);
     }
 }

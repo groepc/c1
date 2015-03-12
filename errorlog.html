@@ -1,1 +1,47 @@
-<p>Error on Mar 10, 2015 19:20PM - require(app/views/welcome/welcome.php): failed to open stream: No such file or directory in /Applications/MAMP/htdocs/c1/app/core/view.php on line 28</p>
+<h3>Exception information:</h3>
+
+		<p><strong>Date:</strong> Mar 12, 2015 11:38AM</p>
+
+		<p><strong>Message:</strong> SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'asfd' for key 'PRIMARY'</p>
+
+		<p><strong>Code:</strong> 23000</p>
+
+		<p><strong>File:</strong> /Applications/MAMP/htdocs/c1/app/helpers/database.php</p>
+
+		<p><strong>Line:</strong> 114</p>
+
+		<h3>Stack trace:</h3>
+
+		<pre>#0 /Applications/MAMP/htdocs/c1/app/helpers/database.php(114): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/c1/app/models/exam.php(18): helpers\Database->insert('tentamen', Array)
+#2 /Applications/MAMP/htdocs/c1/app/controllers/exams.php(64): models\Exam->createExam(Array)
+#3 /Applications/MAMP/htdocs/c1/app/core/router.php(85): controllers\Exams->create()
+#4 /Applications/MAMP/htdocs/c1/app/core/router.php(236): core\Router::invokeObject('\controllers\ex...', Array)
+#5 /Applications/MAMP/htdocs/c1/index.php(85): core\Router::dispatch()
+#6 {main}</pre>
+
+		<hr />
+<h3>Exception information:</h3>
+
+		<p><strong>Date:</strong> Mar 12, 2015 11:37AM</p>
+
+		<p><strong>Message:</strong> SQLSTATE[HY000]: General error: 1364 Field 'gebruikerID' doesn't have a default value</p>
+
+		<p><strong>Code:</strong> HY000</p>
+
+		<p><strong>File:</strong> /Applications/MAMP/htdocs/c1/app/helpers/database.php</p>
+
+		<p><strong>Line:</strong> 114</p>
+
+		<h3>Stack trace:</h3>
+
+		<pre>#0 /Applications/MAMP/htdocs/c1/app/helpers/database.php(114): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/c1/app/models/exam.php(18): helpers\Database->insert('tentamen', Array)
+#2 /Applications/MAMP/htdocs/c1/app/controllers/exams.php(63): models\Exam->createExam(Array)
+#3 /Applications/MAMP/htdocs/c1/app/core/router.php(85): controllers\Exams->create()
+#4 /Applications/MAMP/htdocs/c1/app/core/router.php(236): core\Router::invokeObject('\controllers\ex...', Array)
+#5 /Applications/MAMP/htdocs/c1/index.php(85): core\Router::dispatch()
+#6 {main}</pre>
+
+		<hr />
+<p>Error on Mar 12, 2015 11:08AM - require(app/views/tentamen/create.php): failed to open stream: No such file or directory in /Applications/MAMP/htdocs/c1/app/core/view.php on line 28</p><p>Error on Mar 12, 2015 11:07AM - Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/c1/app/views/dashboard/tentamen.php on line 15</p><p>Error on Mar 12, 2015 10:20AM - session_start(): open(/Applications/MAMP/tmp/php/sess_8f31b90a15a1b8dbf0323e331cd63afa, O_RDWR) failed: Permission denied (13) in /Applications/MAMP/htdocs/c1/app/helpers/session.php on line 24</p><p>Error on Mar 12, 2015 10:20AM - session_start(): open(/Applications/MAMP/tmp/php/sess_8f31b90a15a1b8dbf0323e331cd63afa, O_RDWR) failed: Permission denied (13) in /Applications/MAMP/htdocs/c1/app/helpers/session.php on line 24</p>
