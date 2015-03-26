@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container">
-        <form class="form-signin" action="/" method="post">
+        <form class="form-signin" action="<?php echo DIR; ?>" method="post">
             <h2 class="form-signin-heading">Project Score - Docenten</h2>
             <?php echo \core\error::display($error); ?>
             <label for="username" class="sr-only">Gebruikersnaam</label>

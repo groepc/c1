@@ -24,7 +24,7 @@ class Auth extends \core\controller{
 
 
 		// user already logged in? Redirect to the dashboard
-		if(Session::get('loggin') === true) {
+		if(Session::get('login') === true) {
 			Url::redirect('dashboard');
 		}
 
@@ -46,7 +46,7 @@ class Auth extends \core\controller{
 
 					if( ($user->gebruikersnaam === $_POST['username']) && ($user->wachtwoord === md5($_POST['password'])) ) {
 
-						Session::set('loggin', true);
+						Session::set('login', true);
 						Session::set('userid', $user->ID);
 						Url::redirect('dashboard');
 

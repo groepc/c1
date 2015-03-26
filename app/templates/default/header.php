@@ -9,8 +9,12 @@
 
     <title><?php echo $data['title'].' - '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
 
-    <link href="/app/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/app/assets/css/dashboard.css" rel="stylesheet">
+	<?php
+        helpers\assets::css(array(
+            helpers\url::template_path() . 'assets/css/bootstrap.min.css',
+            helpers\url::template_path() . 'assets/css/dashboard.css',
+        ))
+        ?>
   </head>
   <body>
       <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,8 +40,8 @@
         <div class="row">
           <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-              <li <?php if($data['title'] === 'Dashboard'): ?>class="active"<?php endif; ?>><a href="/dashboard">Dashboard</a></li>
-              <li <?php if($data['title'] === 'Tentamens'): ?>class="active"<?php endif; ?>><a href="/tentamens">Tentamens</a></li>
+              <li <?php if($data['title'] === 'Dashboard'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>dashboard">Dashboard</a></li>
+              <li <?php if($data['title'] === 'Tentamens'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>tentamens">Tentamens</a></li>
               <li><a href="#">Menu item</a></li>
               <li><a href="#">Menu item</a></li>
             </ul>
