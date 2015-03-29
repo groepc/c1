@@ -8,7 +8,7 @@
  * @date June 27, 2014
  */
 class View {
-	
+
 	/**
 	 * @var array Array of HTTP headers
 	 */
@@ -41,9 +41,9 @@ class View {
 		}
 		require "app/templates/". \helpers\Session::get('template') ."/$path.php";
 	}
-	
+
 	/**
-	 * add HTTP header to headers array 
+	 * add HTTP header to headers array
 	 * @param  string  $header HTTP header text
 	 */
 	public function addheader($header) {

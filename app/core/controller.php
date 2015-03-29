@@ -2,6 +2,7 @@
 use core\view,
 	core\language;
 
+
 abstract class Controller {
 
 	/**

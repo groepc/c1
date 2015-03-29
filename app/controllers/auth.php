@@ -48,6 +48,7 @@ class Auth extends \core\controller{
 
 						Session::set('login', true);
 						Session::set('userid', $user->ID);
+						Session::set('userfirstname', $user->voornaam);
 						Url::redirect('dashboard');
 
 					} else {

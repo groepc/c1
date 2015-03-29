@@ -45,7 +45,7 @@ switch ($created) {
         <td><?php echo $exam->aantalStudenten; ?></td>
         <td><?php echo $exam->computerlokaal ? 'Ja' : ' Nee';; ?></td>
         <td><?php echo $exam->surveillant ? 'Ja' : ' Nee'; ?></td>
-        <th><a href="#"><i class="glyphicon glyphicon-edit"></i></a>&nbsp;&nbsp;<a href="#" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a></th>
+        <th><!--<a href="#"><i class="glyphicon glyphicon-edit"></i></a>&nbsp;&nbsp;<a href="#" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a>--></th>
       </tr>
       <?php endforeach; ?>
     </tbody>

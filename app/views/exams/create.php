@@ -4,6 +4,12 @@
       <?php echo \core\error::display($error); ?>
     <?php endif; ?>
 
+    <?php if($data['created'] === true): ?>
+      <div class="alert alert-success">
+        Tentamen succesvol aangevraagd
+      </div>
+    <?php endif; ?>
+
     <form class="form-horizontal" method="post" action="/tentamens/create">
       <!-- Exam code -->
       <div class="form-group">
@@ -53,7 +59,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Tentamen aanmaken</button>
+          <button type="submit" class="btn btn-default">Tentamen aanvragen</button>
         </div>
       </div>
     </form>

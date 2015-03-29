@@ -15,7 +15,7 @@ class Dashboard extends \core\controller{
     public function __construct(){
         parent::__construct();
 
-        if(Session::get('loggin') == false){
+        if(Session::get('login') == false){
             url::redirect('');
         }
     }

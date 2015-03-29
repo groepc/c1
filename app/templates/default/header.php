@@ -26,7 +26,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project Score</a>
+            <a class="navbar-brand" href="/">Project Score <small>- Welkom <?php echo helpers\session::get('userfirstname'); ?></small></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -41,9 +41,10 @@
           <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
               <li <?php if($data['title'] === 'Dashboard'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>dashboard">Dashboard</a></li>
-              <li <?php if($data['title'] === 'Tentamens'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>tentamens">Tentamens</a></li>
-              <li><a href="#">Menu item</a></li>
-              <li><a href="#">Menu item</a></li>
+              <li <?php if($data['title'] === 'Tentamens'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>tentamens/create">Aanvragen Tentamen</a></li>
+              <li <?php if($data['title'] === 'Resultaten invoeren'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>resultaten">Invoeren Resultaten</a></li>
+              <li <?php if($data['title'] === 'Opstellen evaluatie'): ?>class="active"<?php endif; ?>><a href="<?php echo DIR; ?>evaluatie">Opstellen Evaluatie</a></li>
+
             </ul>
           </div>
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

@@ -72,8 +72,18 @@ Router::any('/logout', '\controllers\auth@logout'); // logout
 
 
 Router::any('/dashboard', '\controllers\dashboard@index');
+
+// tentamens overzicht (CRUD)
 Router::any('/tentamens', '\controllers\exams@index');
 Router::any('/tentamens/create', '\controllers\exams@create');
+
+// Resultaten invoeren
+Router::any('/resultaten', '\controllers\results@index');
+Router::any('/resultaten/(:num)', '\controllers\results@edit');
+
+// Evaluatie invoeren
+Router::any('/evaluatie', '\controllers\evaluation@index');
+Router::any('/evaluatie/(:num)', '\controllers\evaluation@edit');
 
 //if no route found
 Router::error('\core\error@index');

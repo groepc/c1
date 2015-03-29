@@ -17,7 +17,7 @@ class Exams extends \core\controller{
     public function __construct(){
         parent::__construct();
 
-        if(Session::get('loggin') == false){
+        if(Session::get('login') == false){
             url::redirect('');
         }
 
@@ -39,6 +39,8 @@ class Exams extends \core\controller{
     }
 
     public function create() {
+
+        $data['created'] = false;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -62,24 +64,17 @@ class Exams extends \core\controller{
                 );
 
                 if($this->exam->createExam($params) == 0) {
-                    url::redirect('/tentamens/?created=true');
-                } else {
-                    url::redirect('/tentamens/?created=false');
+                    $data['created'] = true;
                 }
-
-            } else {
-                url::redirect('/tentamens/?created=false');
             }
 
-        } else {
-            // GET REQUEST
-
-            $data['title'] = 'Tentamens';
-            $data['subtitle'] = 'Aanmaken';
-
-            View::rendertemplate('header', $data);
-            View::render('exams/create', $data);
-            View::rendertemplate('footer', $data);
         }
+
+        $data['title'] = 'Tentamens';
+        $data['subtitle'] = 'Aanvragen';
+
+        View::rendertemplate('header', $data);
+        View::render('exams/create', $data);
+        View::rendertemplate('footer', $data);
     }
 }
