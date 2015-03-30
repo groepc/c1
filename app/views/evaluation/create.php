@@ -6,32 +6,32 @@
 
     <?php if($data['created'] === true): ?>
       <div class="alert alert-success">
-        Tentamen succesvol aangevraagd
+        Evaluatie succesvol opgeslagen.
       </div>
     <?php endif; ?>
 
-    <form class="form-horizontal" method="post" action="/tentamens/create">
+    <form class="form-horizontal" method="post" action="">
       <!-- Exam code -->
       <div class="form-group">
-        <label for="examCode" class="col-sm-2 control-label">Datum en tijd</label>
+        <label for="datumtijd" class="col-sm-2 control-label">Datum</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="examCode" name="examCode" placeholder="Datum en tijd" disabled>
+          <input type="text" class="form-control" id="datumtijd" name="datumtijd" value="<?php echo date('Y-m-d'); ?>" readonly>
         </div>
       </div>
 
       <!-- Exam speciality -->
       <div class="form-group">
-        <label for="examSpeciality" class="col-sm-2 control-label">Tentamencode</label>
+        <label for="tentamenCode" class="col-sm-2 control-label">Tentamencode</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="examSpeciality" name="examSpeciality" placeholder="Tentamencode" disabled>
+          <input type="text" class="form-control" id="tentamenCode" name="tentamenCode" value="<?php echo $data['examInfo'][0]->code; ?>" readonly>
         </div>
       </div>
 
       <!-- Exam speciality -->
       <div class="form-group">
-        <label for="examPeriod" class="col-sm-2 control-label">Cijfer</label>
+        <label for="cijfer" class="col-sm-2 control-label">Cijfer</label>
         <div class="col-sm-10">
-          <input type="number" min="1" max="10" step="0.1" class="form-control" id="examPeriod" name="examPeriod" placeholder="Cijfer" required>
+          <input type="number" min="1" max="10" step="0.1" class="form-control" id="cijfer" name="cijfer" placeholder="Cijfer" required>
         </div>
       </div>
 
@@ -39,7 +39,7 @@
       <div class="form-group">
         <label for="examStudents" class="col-sm-2 control-label">Opmerkingen</label>
         <div class="col-sm-10">
-          <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+          <textarea name="document" id="" cols="30" rows="10" class="form-control"></textarea>
         </div>
       </div>
 

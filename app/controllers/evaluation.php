@@ -10,6 +10,7 @@ use helpers\url;
 class Evaluation extends \core\controller{
 
     public $resultsModel = null;
+    public $evaluationModel = null;
 
     /**
      * Call the parent construct
@@ -22,6 +23,7 @@ class Evaluation extends \core\controller{
         }
 
         $this->resultsModel = $this->loadModel('Result');
+        $this->evaluationModel = $this->loadModel('Evaluation');
     }
 
     public function index() {
@@ -36,21 +38,19 @@ class Evaluation extends \core\controller{
 
     public function edit($id) {
 
-        $data['saved'] = false;
+        $data['created'] = false;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            foreach($_POST['result'] as $userId => $result) {
-                $this->resultsModel->updateExamScore($userId, $id, $result);
-            }
+            $data = $_POST;
+            $data['gebruikerID'] = Session::get('userid');
 
-            $data['saved'] = true;
+            $this->evaluationModel->insertEvaluation($data);
+
+            $data['created'] = true;
         }
 
-        $examInfo = $this->resultsModel->getExamInformationById($id);
-
-        $data['title'] = 'Resultaten invoeren';
-        $data['subtitle'] = $examInfo[0]->code . ' - ' . $examInfo[0]->vak . ' - ' . date("j F, Y", strtotime($examInfo[0]->datumtijd));
-        $data['pastExams'] = $this->resultsModel->getEntriesForExam($id);
+        $data['title'] = 'Opstellen evaluatie';
+        $data['examInfo'] = $this->resultsModel->getExamInformationById($id);
 
         View::rendertemplate('header', $data);
         View::render('evaluation/create', $data);

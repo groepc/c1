@@ -1,1 +1,24 @@
-<p>Error on Mar 29, 2015 17:51PM - require(app/views/evaluation/index.php): failed to open stream: No such file or directory in /Applications/MAMP/htdocs/c1/app/core/view.php on line 28</p><p>Error on Mar 29, 2015 16:17PM - Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/c1/app/views/results/edit.php on line 40</p><p>Error on Mar 29, 2015 15:41PM - Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/c1/app/views/exams/index.php on line 40</p>
+<h3>Exception information:</h3>
+
+		<p><strong>Date:</strong> Mar 30, 2015 19:17PM</p>
+
+		<p><strong>Message:</strong> SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`score`.`evaluatie`, CONSTRAINT `FKEvaluatie245395` FOREIGN KEY (`gebruikerID`) REFERENCES `gebruiker` (`ID`))</p>
+
+		<p><strong>Code:</strong> 23000</p>
+
+		<p><strong>File:</strong> /Applications/MAMP/htdocs/c1/app/helpers/database.php</p>
+
+		<p><strong>Line:</strong> 114</p>
+
+		<h3>Stack trace:</h3>
+
+		<pre>#0 /Applications/MAMP/htdocs/c1/app/helpers/database.php(114): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/c1/app/models/evaluation.php(10): helpers\Database->insert('evaluatie', Array)
+#2 /Applications/MAMP/htdocs/c1/app/controllers/evaluation.php(44): models\Evaluation->insertEvaluation(Array)
+#3 [internal function]: controllers\Evaluation->edit('59')
+#4 /Applications/MAMP/htdocs/c1/app/core/router.php(90): call_user_func_array(Array, Array)
+#5 /Applications/MAMP/htdocs/c1/app/core/router.php(236): core\Router::invokeObject('\controllers\ev...', Array)
+#6 /Applications/MAMP/htdocs/c1/index.php(95): core\Router::dispatch()
+#7 {main}</pre>
+
+		<hr />
