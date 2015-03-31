@@ -7,7 +7,9 @@ use helpers\url;
  * Dashboard controller
  *
  */
-class Dashboard extends \core\controller{
+class Dashboard extends \core\controller {
+
+    public $examModel = null;
 
     /**
      * Call the parent construct
@@ -18,6 +20,8 @@ class Dashboard extends \core\controller{
         if(Session::get('login') == false){
             url::redirect('');
         }
+
+        $this->exam = $this->loadModel('Exam');
     }
 
     /**
@@ -25,6 +29,9 @@ class Dashboard extends \core\controller{
      */
     public function index() {
         $data['title'] = 'Dashboard';
+
+        $data['requestedExams'] = $this->exam->getAllExamsByUser(Session::get('userid'));
+        $data['latestPlannedExams'] = $this->exam->getLatestPlannedExams();
 
         View::rendertemplate('header', $data);
         View::render('dashboard/dashboard', $data);
