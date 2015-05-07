@@ -20,7 +20,7 @@
 				<?php foreach($entries as $entrie): ?>
 				<tr>
 					<td><?php echo $entrie->voornaam . ' ' . $entrie->tussenvoegsel . ' ' . $entrie->achternaam; ?></td>
-					<td><input type="number" min="1" max="10" step="0.1" name="result[<?php echo $entrie->gebruikerID; ?>]" class="form-control input-sm" placeholder="Cijfer invullen" value="<?php echo $entrie->cijfer; ?>"></td>
+					<td><input type="number" min="1" max="10" step="0.1" name="result[<?php echo $entrie->gebruikerID; ?>]" class="form-control input-sm" placeholder="Cijfer invullen" value="<?php echo $entrie->cijfer; ?>" required></td>
 				</tr>
 				<?php endforeach; ?>
 			</tbody>
