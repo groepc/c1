@@ -23,7 +23,7 @@ class Result extends \core\model {
     }
 
     public function getExamInformationById($code) {
-        return $this->_db->select("SELECT tentamen.vak, tentamen.code, planning.datumtijd FROM tentamen, planning WHERE planning.tentamencode = tentamen.code AND planning.ID = :code", array(':code' => $code));
+        return $this->_db->select("SELECT * FROM tentamen, planning WHERE planning.tentamencode = tentamen.code AND planning.ID = :code", array(':code' => $code));
     }
 
     public function updateExamScore($userId, $examId, $score) {

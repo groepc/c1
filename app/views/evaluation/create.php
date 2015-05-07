@@ -32,7 +32,7 @@
         <label for="cijfer" class="col-sm-2 control-label">Cijfer</label>
 
         <div class="col-sm-10">
-          <input type="number" min="1" max="10" step="0.1" class="form-control" id="cijfer" name="cijfer" placeholder="Cijfer" value="<?php if(isset($data['filledValues'][0]->cijfer)) { echo $data['filledValues'][0]->cijfer; } ?>" required>
+          <input type="number" min="1" max="10" step="0.1" class="form-control" id="cijfer" name="cijfer" placeholder="Cijfer" value="<?php if(isset($data['filledValues'][0]->cijfer)) { echo $data['filledValues'][0]->cijfer; } ?>" required <?php if(isset($data['filledValues'][0]->document)) { echo 'disabled'; } ?>>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
       <div class="form-group">
         <label for="examStudents" class="col-sm-2 control-label">Opmerkingen</label>
         <div class="col-sm-10">
-          <textarea name="document" id="" cols="30" rows="10" class="form-control" ><?php if(isset($data['filledValues'][0]->document)) { echo $data['filledValues'][0]->document; } ?></textarea>
+          <textarea name="document" id="" cols="30" rows="10" class="form-control" <?php if(isset($data['filledValues'][0]->document)) { echo 'disabled'; } ?>><?php if(isset($data['filledValues'][0]->document)) { echo $data['filledValues'][0]->document; } ?></textarea>
         </div>
       </div>
 
@@ -51,7 +51,11 @@
           </div>
         </div>
       <?php else: ?>
-        Evaluatie reeds ingevuld.
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            Evaluatie reeds ingevuld.
+          </div>
+        </div>
       <?php endif; ?>
     </form>
   </div>

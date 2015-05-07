@@ -30,6 +30,8 @@ class Results extends \core\controller{
 		$data['title'] = 'Resultaten invoeren';
 		$data['pastExams'] = $this->resultsModel->getPastExams();
 
+
+
 		View::rendertemplate('header', $data);
 		View::render('results/index', $data);
 		View::rendertemplate('footer', $data);
@@ -49,8 +51,9 @@ class Results extends \core\controller{
 
 		$examInfo = $this->resultsModel->getExamInformationById($id);
 
-		$data['title'] = 'Resultaten invoeren';
+		$data['title'] = $examInfo[0]->afgerond == 1 ? 'Resultaten bekijken' : 'Resultaten invoeren';
 		$data['subtitle'] = $examInfo[0]->code . ' - ' . $examInfo[0]->vak . ' - ' . date("j F, Y", strtotime($examInfo[0]->datumtijd));
+		$data['examInfo'] = $examInfo;
 		$data['pastExams'] = $this->resultsModel->getEntriesForExam($id);
 
 		View::rendertemplate('header', $data);

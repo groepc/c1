@@ -10,6 +10,10 @@ class Evaluation extends \core\model {
         return $this->_db->select("SELECT count(*) FROM evaluatie WHERE tentamenCode = :tentamenCode", array(':tentamenCode' => $tentamenCode));
     }
 
+    public function getEvaluationsByCode($tentamenCode) {
+        return $this->_db->select("SELECT * FROM evaluatie WHERE tentamenCode = :tentamenCode", array(':tentamenCode' => $tentamenCode));
+    }
+
     public function insertEvaluation($data) {
 
         $data['created_at'] = date('Y-m-d H:i:s');

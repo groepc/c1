@@ -26,4 +26,16 @@ class Exam extends \core\model {
         $params['created_at'] = date('Y-m-d H:i:s');
         return $this->_db->insert('tentamen', $params);
     }
+
+    public function endExam($tentamenCode) {
+        $data = array(
+            'afgerond' => 1
+        );
+
+        $where = array(
+            'code' => $tentamenCode,
+        );
+
+        return $this->_db->update('tentamen', $data, $where);
+    }
 }

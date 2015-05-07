@@ -84,6 +84,7 @@ Router::any('/resultaten/(:num)', '\controllers\results@edit');
 // Evaluatie invoeren
 Router::any('/evaluatie', '\controllers\evaluation@index');
 Router::any('/evaluatie/(:num)', '\controllers\evaluation@edit');
+Router::any('/evaluatie/(:num)/send', '\controllers\evaluation@send');
 
 //if no route found
 Router::error('\core\error@index');

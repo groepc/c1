@@ -18,7 +18,11 @@
         <td><?php echo $exam->tentamencode; ?></td>
         <td><?php echo $exam->vak; ?></td>
         <td><?php echo date("j F, Y", strtotime($exam->datumtijd)); ?></td>
-        <td><a href="<?php echo DIR; ?>resultaten/<?php echo $exam->ID; ?>" class="btn btn-xs btn-success pull-right">Resultaten invoeren</a></td>
+        <?php if($exam->afgerond == 1): ?>
+          <td><a href="<?php echo DIR; ?>resultaten/<?php echo $exam->ID; ?>" class="btn btn-xs btn-info pull-right">Resultaten bekijken</a></td>
+        <?php else: ?>
+          <td><a href="<?php echo DIR; ?>resultaten/<?php echo $exam->ID; ?>" class="btn btn-xs btn-success pull-right">Resultaten invoeren</a></td>
+        <?php endif; ?>
       </tr>
       <?php endforeach; ?>
     </tbody>

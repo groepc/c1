@@ -23,7 +23,7 @@
         <td><?php echo date("j F, Y", strtotime($exam->datumtijd)); ?></td>
         <td><?php echo $exam->evaluationCount ?></td>
         <?php if((int) $exam->evaluationCount >= 5 && $exam->afgerond != 1 ): ?>
-          <td><a href="<?php echo DIR; ?>evaluatie-versturen/<?php echo $exam->ID; ?>" class="btn btn-xs btn-success pull-right">Evaluatie versturen</a></td>
+          <td><a href="<?php echo DIR; ?>evaluatie/<?php echo $exam->ID; ?>/send" class="btn btn-xs btn-success pull-right">Evaluatie versturen</a></td>
         <?php elseif(   $exam->afgerond == 0 ): ?>
           <td><a href="<?php echo DIR; ?>evaluatie/<?php echo $exam->ID; ?>" class="btn btn-xs btn-info pull-right">Evaluatie invoeren</a></td>
         <?php else: ?>
