@@ -51,6 +51,7 @@ class Evaluation extends \core\controller{
 
         $data['title'] = 'Opstellen evaluatie';
         $data['examInfo'] = $this->resultsModel->getExamInformationById($id);
+        $data['filledValues'] = $this->evaluationModel->getEvaluationByUserId($data['examInfo'][0]->code, Session::get('userid'));
 
         View::rendertemplate('header', $data);
         View::render('evaluation/create', $data);

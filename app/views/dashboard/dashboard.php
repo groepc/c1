@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12 col-md-6">
         <h4>Laatst aangevraagde tentamens</h4>
         <table class="table">
             <thead>
@@ -21,14 +21,14 @@
         </table>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-12 col-md-6">
         <h4>Laatst ingeplande tentamens</h4>
         <table class="table">
             <thead>
                 <tr>
                     <th>Tentamencode</th>
                     <th>Lokaalcode</th>
-                    <th>Datum</th>
+                    <th>Staat ingepland op</th>
                 </tr>
             </thead>
             <tbody>

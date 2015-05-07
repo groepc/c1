@@ -7,7 +7,15 @@ class Result extends \core\model {
     }
 
     public function getPastExams() {
-        return $this->_db->select("SELECT planning.ID, planning.tentamencode, planning.datumtijd, tentamen.vak FROM planning, tentamen WHERE planning.datumtijd < CURDATE() AND planning.tentamencode = tentamen.code");
+
+        $pastExams = $this->_db->select("SELECT planning.ID, planning.tentamencode, planning.datumtijd, tentamen.vak, tentamen.afgerond FROM planning, tentamen WHERE planning.datumtijd < CURDATE() AND planning.tentamencode = tentamen.code ORDER BY tentamen.afgerond ASC");
+
+        foreach($pastExams as $key => $exam) {
+            $evaluationCount = $this->_db->select("SELECT count(*) as count FROM evaluatie WHERE tentamenCode = :tentamenCode LIMIT 1", array(':tentamenCode' => $exam->tentamencode));
+            $pastExams[$key]->evaluationCount = $evaluationCount[0]->count;
+        }
+
+        return $pastExams;
     }
 
     public function getEntriesForExam($code) {
