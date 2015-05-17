@@ -23,6 +23,7 @@
 					<td><?php echo $entrie->voornaam . ' ' . $entrie->tussenvoegsel . ' ' . $entrie->achternaam; ?></td>
 					<td>
 						<select name="result[<?php echo $entrie->gebruikerID; ?>]" class="form-control input-sm" required <?php if ($afgerond == 1): ?>disabled<?php endif; ?>>
+							<option value="N/A">N/A</option>
 							<option value="1" <?php if($entrie->cijfer == '1') { echo 'selected'; } ?>>1</option>
 							<option value="1.5" <?php if($entrie->cijfer == '1.5') { echo 'selected'; } ?>>1.5</option>
 							<option value="2" <?php if($entrie->cijfer == '2') { echo 'selected'; } ?>>2</option>

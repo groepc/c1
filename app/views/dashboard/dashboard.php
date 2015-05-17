@@ -36,7 +36,8 @@
                     <tr>
                         <td><?php echo $exam->tentamencode; ?></td>
                         <td><?php echo $exam->lokaalCode; ?></td>
-                        <td><?php echo $exam->datumtijd; ?></td>
+                        <td><?php echo date("j F, Y", strtotime($exam->datumtijd)); ?></td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -17,7 +17,7 @@
           <td><?php echo $evaluation->ID ?></td>
           <td><?php echo $evaluation->cijfer ?></td>
           <td><?php echo $evaluation->document ?></td>
-          <td><?php echo $evaluation->datumtijd ?></td>
+          <td><?php echo date("j F, Y", strtotime($evaluation->datumtijd)); ?></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
